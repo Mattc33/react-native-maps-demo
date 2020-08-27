@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "geolocation",
-    "slug": "geolocation",
+    "name": "react-native-maps",
+    "slug": "react-native-maps",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -18,6 +18,12 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "permissions": [
+        "ACCESS_COURSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

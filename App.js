@@ -1,13 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, SafeAreaView } from 'react-native';
+
+import { getLocationPermission } from './src/utils/location.utils';
+
+import MapViewScreen from './src/screens/MapView.screens';
 
 export default function App() {
+
+  useEffect(() => {
+    getLocationPermission();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <MapViewScreen />
+    </SafeAreaView>
   );
 }
 
@@ -17,5 +24,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
 });
